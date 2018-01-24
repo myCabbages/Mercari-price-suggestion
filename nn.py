@@ -3,7 +3,7 @@ import pandas as pd
 import math
 
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.layers import Input, Dropout, Dense, BatchNormalization, Activation, concatenate, GRU, Embedding, Flatten, BatchNormalization
@@ -91,8 +91,8 @@ def get_model():
 
 if __name__ == '__main__':
     print('Reading Data......')
-    train = pd.read_table('../data/train.tsv')
-    test = pd.read_table('../data/test.tsv')
+    train = pd.read_table('../input/train.tsv')
+    test = pd.read_table('../input/test.tsv')
 
     train = handle_missing(train)
     test = handle_missing(test)
